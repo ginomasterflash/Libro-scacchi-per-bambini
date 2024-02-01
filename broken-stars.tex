@@ -1,0 +1,51 @@
+\documentclass[10pt,a4paper,twoside]{article}
+\usepackage[utf8]{inputenc}           % Use Unicode (non-english characters)
+\usepackage{dnd}                      % Custom components
+\usepackage{multicol}                 % Multicolumn pages
+\usepackage{palatino}                 % Closest built-in font I could find
+\usepackage{ulem}                     % Underline elements
+\usepackage[hidelinks]{hyperref}      % Clickable table of content links
+
+% Page Settings
+\emergencystretch 10pt                % allow some extra stretching
+\raggedcolumns                        % Set up ragged columns for multicols
+\setlength{\columnsep}{1cm}           % Column seperator
+\setlength{\parindent}{0em}           % Paragraph indent size
+\setlength{\parskip}{0.5em}           % Paragraph after gap
+\graphicspath{ {images/} }            % Image directory
+\emergencystretch 10pt                % allow some extra stretching
+
+% Start document
+\begin{document}
+
+  % Intro
+  \include{broken-stars/intro}
+  % Contents
+  \begin{multicols}{2}
+    \tableofcontents
+  \end{multicols}
+  % Character Creation Game Concepts & Combat rules
+  \include{broken-stars/rules}
+  % Species
+  \include{broken-stars/species}
+  % Hindrances
+  \include{broken-stars/hindrances}
+  % Edges
+  \include{broken-stars/edges}
+  % Gear
+  \include{broken-stars/gear}
+  % Psionics
+  \include{broken-stars/psionics}
+  % Cyberware
+  \include{broken-stars/cyberware}
+  % Spacecraft
+  \include{broken-stars/spacecraft}
+  \include{broken-stars/jobs}
+  % Sector
+  \include{broken-stars/sector}
+  % Templates
+  \include{broken-stars/template}
+  % Templates
+  \include{broken-stars/sheet-characters}
+  \include{broken-stars/sheet-spacecrafts}
+\end{document}

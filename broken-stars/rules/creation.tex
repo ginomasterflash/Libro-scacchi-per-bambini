@@ -1,0 +1,241 @@
+\subsection{Character Creation}
+\label{sec:rules-creation}
+
+\begin{enumerate}
+
+  \item \textbf{Species:}\\ The main species of this sector is human, although you can choose to play as a member of another alien species.
+  
+  \item \textbf{Attributes:}\\ You start with a d4 in each attribute and have 5 points with which to raise them. Raising an attribute by one die type costs 1 point (but you cannot raise an attribute above a d12).
+    \begin{redtable}{\linewidth}{@{}L{1}@{}}
+      \textbf{Strength}\\
+      Raw physical power and general fitness\\
+      \textbf{Agility}\\
+      Nimbleness, quickness and dexterity\\
+      \textbf{Smarts}\\
+      Mental agility and your knowledge about the worlds that inhabit the Black\\
+      \textbf{Spirit}\\
+      Inner wisdom, confidence, individuality and willpower\\
+      \textbf{Vigor}\\
+      Endurance and a measure of how much pain and physical damage you can shake off
+    \end{redtable}
+
+  \item \textbf{Skills:}\\ You have 15 points for skills. Each die type in a skill costs 1 point up to the linked attribute. Going over the linked attribute costs 2 points per level.
+
+  \item \textbf{Derived Traits:}
+    \begin{redtable}{\linewidth}{@{}L{1}@{}}
+      \textbf{Charisma}\\
+      General likeability and manners, and is added to all persuasion and streetwise rolls. Calculated as: \textbf{(Spirit / 2) - 4}\\
+      \textbf{Pace}\\
+      How many squares of movement you can take during your turn. Calculated as: \textbf{(Strength / 2) + 2}\\
+      \textbf{Parry}\\
+      Target number for melee combat or against ranged weapons within melee range. Calculated as: \textbf{(Fighting / 2) + 2}\\
+      \textbf{Toughness}\\
+      Add armour on top of toughness. Calculated as: \textbf{(Vigor / 2) + 2}\\
+    \end{redtable}
+
+  \item \textbf{Hindrances:}\\ You can choose to gain additional character creation points by taking up to \textbf{one} Major Hindrance (2 points) and up to \textbf{two} Minor Hindrances (1 point each).
+    \begin{itemize}
+        \item For 2 points you can gain another attribute point or choose an \textbf{Edge}.
+        \item For 1 point you can gain another skill point or increase starting funds by 100\%.
+    \end{itemize}
+
+  \item \textbf{Edges:}\\ Edges are what sets your character apart from everyone else. There are 3 main paths to choose from:
+    \begin{itemize}
+        \item \textbf{Standard}: Just use the normal Edge list.
+        \item \textbf{Psionic}: Take the \textit{\hyperref[sec:psionics]{Psionic Background}} edge and manipulate Space-Time. (\textit{Organics only})
+        \item \textbf{Cyberware}: Take the \textit{\hyperref[sec:cyberware]{Cyberware Install}} edge and enhance your abilities with tech.
+    \end{itemize}
+
+  \item \textbf{Gear:}\\ All characters start with 750 Credits to buy their equipment with.
+
+  \item \textbf{Background Detail:}\\ Fill in any other details of your character's background. This includes selecting a homeworld, parentage, and pre-adventuring career. Every character knows the generic trade language "Basic" and their planetary dialect.
+  
+\end{enumerate}
+
+\subsubsection{Advancement}
+
+Experience points are gained by completing a game session. Each game session is worth ~1-3 points. Your character has a "\textbf{Rank}", and higher ranks allow you to access the better Edges.
+
+\begin{redtable}{\linewidth}{@{}L{.25}@{}L{.75}@{}}
+    \textbf{XP} & \textbf{Rank}\\
+    0-19 & Novice\\
+    20-39 & Seasoned\\
+    40-59 & Veteran\\
+    60-79 & Heroic\\
+    80+ & Legendary
+\end{redtable}
+
+Every 5 points accumulated grants the character an Advance (or 4 Advances per Rank). One Advance allows you to do the following:
+
+\begin{itemize}
+  \item Gain a new Edge
+  \item Increase one skill that is equal to or greater than its linked attribute
+  \item Increase two skills that are lower than its linked attribute
+  \item Buy a new skill at d4
+  \item Increase one attribute (only choose this once per Rank, and no Trait can be raised above a d12)
+\end{itemize}
+
+\subsubsection{Species list}
+
+\begin{genericsection}{Ay-Matak}
+  Avian, bird-like alien species that love to travel and experience life. \textit{\hyperref[sec:specie-ay-matak]{See Species section Ay-Matak}}
+\end{genericsection}
+\begin{redtable}{\linewidth}{@{}L{1}@{}}
+  \textbf{Flight}\\
+  Can fly at their basic Pace and even "run" while flying. It cost 2 squares of Pace to gain 1 square of height\\
+  \textbf{Hollow-boned}\\
+  You cannot take much damage because of your hollow bones. -1 toughness\\
+  \textbf{Free Edge}\\
+  Start with one free Novice Edge (you must meet the requirements)
+\end{redtable}
+      
+\begin{genericsection}{Bot}
+  A standard "weak" AI hard-coded into a single chassis. \textit{\hyperref[sec:specie-bots]{See Species section Bots}}
+\end{genericsection}
+\begin{redtable}{\linewidth}{@{}L{1}@{}}
+  \textbf{Artificial}\\
+  Organics will generally prefer to deal with another organic. -2 penalty to Charisma when dealing with organics that do not know you\\
+  \textbf{Construct}\\
+  Add +2 to recover from being Shaken, ignore 1 level of wound penalties, do not breathe, and you are immune to poison and disease. You cannot Heal naturally, and require the Repair skill to remove wounds (use like the Healing skill)\\
+  \textbf{Recharge}\\
+  If you cannot access a power source at least once a day, suffer one point of Fatigue each day until Incapacitated. You must be revived with a Repair roll and a whole day of charging. If you are in this "off-line" state for more than your Vigor die in days, you effectively "die" (a new personality can be uploaded onto the chassis)\\
+  \textbf{Three-Laws}\\
+  Asimov's Three Laws of Robotics proved popular, but everyone wanted to tweak it. If you choose, alter your programmed "Three Laws" while keeping it's spirit. You suffer one point of fatigue if you force yourself to go against your "Three Laws"
+\end{redtable}
+
+\begin{commentbox}{\textbf{Three Laws}}
+1. You may not injure an organic or allow an organic to come to harm.\\
+2. You must obey orders given by organics except where such orders would conflict with the 1st Law.\\
+3. You must protect your own existence as long as such protection does not conflict with the 1st or 2nd Law.
+\end{commentbox}
+  
+\begin{genericsection}{Ghantak}
+  Insectiod, beetle-like alien species that are tradition and honour-bound to serve their Queen. Contrary to popular belief, they are not part of a "hive-mind". \textit{\hyperref[sec:specie-ghantak]{See Species section Ghantak}}
+\end{genericsection}
+\begin{redtable}{\linewidth}{@{}L{1}@{}}
+  \textbf{Carapace}\\
+  You have a hard shell that can absorb most damage. +2 Armour (cannot stack with other armour; take the highest armour value)\\
+  \textbf{Hidden Organs}\\
+  Your vital organs are hidden away under your shell. Called shots do no extra damage against you\\
+  \textbf{Restricted senses}\\
+  Your unusual head restricts your field of vision. -1 to Trait rolls requiring vision\\
+  \textbf{Free Edge}\\
+  Start with one free Novice Edge (you must meet the requirements)\\
+\end{redtable}
+  
+\begin{genericsection}{Ghoa}
+  Violent and combative mammalian-reptilian hybrid alien species. They are all hermaphrodites, with the weaker individuals relegated to birthing duties. \textit{\hyperref[sec:specie-ghoa]{See Species section Ghoa}}
+\end{genericsection}
+\begin{redtable}{\linewidth}{@{}L{1}@{}}
+  \textbf{Bloodthirsty}\\
+  Ghoa have a reputation of being cruel to their foes and punishing captured enemies. This causes a -2 Charisma penalty when dealing with "civilized" people that do not know you (NOTE: You do not need to meet the Ghoan stereotype)\\
+  \textbf{Natural Weapons}\\
+  The Ghoa use their tails, claws and teeth as weapons, dealing Str+d6 damage. You are not considered an \textit{Unarmed Defender}\\
+  \textbf{Reptile Blood}\\
+  -4 penalty to resist negative Cold environmental effects\\
+  \textbf{Stronger}\\
+  Start with a d6 in Strength instead of a d4.\\
+  \textbf{Free Edge}\\
+  Start with one free Novice Edge (you must meet the requirements)\\
+\end{redtable}
+  
+\begin{genericsection}{Human}
+  Standard human descended from ancient Earth. Some planets have slight physical differences (such as pointed ears, greenish skin, or being short and stout) due to bio-engineering and genetic divergence. \textit{\hyperref[sec:specie-human]{See Species section Human}}
+\end{genericsection}
+\begin{redtable}{\linewidth}{@{}L{1}@{}}
+  \textbf{Flexible}\\
+  Start with a d6 in a skill of your choice\\
+  \textbf{Free Edge}\\
+  Start with one free Novice Edge of their choice.\\
+\end{redtable}
+  
+\begin{genericsection}{Kaj}
+  Intelligent grey-skinned humanoid alien species that generally prefer the artificial instead of the natural. \textit{\hyperref[sec:specie-kaj]{See Species section Kaj}}
+\end{genericsection}
+\begin{redtable}{\linewidth}{@{}L{1}@{}}
+  \textbf{Artificial environments}\\
+  -4 penalty to resist all negative Heat and Cold effects. If you suffer an attack based on that form, the penalty acts as a bonus to damage.\\
+  \textbf{Expert}\\
+  Kaj are genetically engineered to excel. Select one Skill. Anytime you make a roll with that Skill, add +2 to the result\\
+  \textbf{Frail}\\
+  Kaj select their genes to increase intelligence over physicality. -1 Toughness\\
+  \textbf{Genetically enhanced}\\
+  Kaj start with a d6 in Smarts instead of a d4.\\
+  \textbf{Free Edge}\\
+  Start with one free Novice Edge (you must meet the requirements)\\
+\end{redtable}
+  
+\begin{genericsection}{Pluvma}
+  Lanky, top-heavy multi-limbed alien species that generally try to stand out from the "pack". \textit{\hyperref[sec:specie-pluvma]{See Species section Pluvma}}
+\end{genericsection}
+\begin{redtable}{\linewidth}{@{}L{1}@{}}
+  \textbf{One Eye}\\
+  You have limited depth perception, so you take a -2 penalty to Trait rolls that require vision (such as Shooting)\\
+  \textbf{Four Arms}\\
+  You have two additional arms. This allows you to get an extra 2 non-movement actions per turn, which do not incur the multi-action penalty (they do suffer from off-hand and other penalties)\\
+  \textbf{Unpredictable}\\
+  The Pluvma have a reputation of being annoyingly unique, so much so that to others they seem to have a new personality everyday. -2 penalty to Charisma when dealing with non-Pluvma who do not know you (NOTE: You do not need to meet the Pluvmian stereotype)\\
+\end{redtable}
+
+\vspace{\baselineskip}
+  
+\begin{genericsection}{Shell}
+  An advanced Artificial General Intelligence (AGI) or digitised consciousness (Ghost) that can be freely uploaded to an artificial chassis. \textit{\hyperref[sec:specie-bots]{See Species section Bots}}
+\end{genericsection}
+
+\vspace{\baselineskip}
+
+\begin{redtable}{\linewidth}{@{}L{1}@{}}
+  \textbf{Artificial}\\
+  You are seen as a "traitor" or a threat to most organics. -2 penalty to Charisma when dealing with organics that do not know you\\
+  \textbf{Bugs}\\
+  Ghosts and AGI do not sync up perfectly with their chassis. Select one Major OR two Minor hindrances that make sense for you and the chassis. Do not gain any character creation points. This bug remains with the chassis when you transfer to another chassis\\
+  \textbf{Construct}\\
+  Add +2 to recover from being Shaken, ignore 1 level of wound penalties, do not breathe, and you are immune to poison and disease. You cannot Heal naturally, and require the Repair skill to remove wounds (use like the Healing skill)\\
+  \textbf{Deus Ex Machina}\\
+  Ghosts and AGI do not have any stats. All stats are tied to a chassis. See the following box for more information about this feature.\\
+  \textbf{Disorientation}\\
+  When you are first uploaded into a new chassis, you have a settling period of a few minutes (4d4 rounds OR at the GM's discretion). If you attempt to do any task during the settling period, apply a -2 penalty\\
+  \textbf{Recharge}\\
+  Works exactly like the "\textit{Recharge}" feature of the \textbf{Bot} class.\\
+\end{redtable}
+
+\vspace{\baselineskip}
+
+\begin{commentbox}{\textbf{Ghost in a Shell}}
+Ghosts and AGI do not have any statistics except for XP. Your XP does not grant you any advances, and is simply used to track what rank of chassis you are allowed to pilot. You do retain all of your memories, and old Ghosts and AGI may use external memory banks.\\
+\\
+All statistics, Edges and Hindrances are tied to a particular chassis (including the Bugs class feature). A chassis also tracks it's own separate XP (this represents your "familiarity" you have with the chassis, allowing you to "upgrade" it with up to 4 advances). A chassis cannot increase it's rank unless you pay a financial cost to improve it. You may not inhabit a chassis if you do not meet it's rank requirement (i.e. your XP rank must meet or exceed the rank of the chassis).\\
+\\
+You may own multiple different chassis tailored for specific jobs. You may transfer your Ghost or AGI to any chassis provided you "clear" out the old chassis; having multiple versions of "you" is illegal. 
+\end{commentbox}
+  
+\begin{genericsection}{Uplifted}
+  Genetically-altered primitive animals that have been given sentience by pre-Surge tech-heads. \textit{\hyperref[sec:specie-uplifted]{See Species section Uplifted}}
+\end{genericsection}
+
+\begin{redtable}{\linewidth}{@{}L{1}@{}}
+  \textbf{Inferior}\\
+  Many see the Uplifted as inferior to other species that have evolved naturally. -2 Charisma when dealing with the non-Uplifted who do not know you\\
+  \textbf{Primitive Intellect}\\
+  You may be uplifted, but your primitive brain is still slow. -1 to Smarts-based checks\\
+  \textbf{Primal Ancestry}\\
+  You have an ability due to your animal ancestor. Choose one of the following from the list.\\
+  \textbf{Primal Weapons}\\
+  You still have the claws, teeth, horns or other leftovers from your primitive animal state. These natural weapons do Str+d6 damage. You are not considered an \textit{Unarmed Opponent}\\
+  \textbf{Free Edge}\\
+  Start with one free Novice Edge (you must meet the requirements)\\
+\end{redtable}
+
+\textbf{Primal Ancestry}
+\begin{itemize}
+    \item \textbf{Bear:} +1 Size, and +3 Toughness (including the Size bonus). You may have difficulty fitting into gear made for normal humanoids
+    \item \textbf{Bovine:} You start with a d6 in Vigor instead of a d4, and a +2 bonus to resist all negative environmental effects (heat, cold, pressure, etc)
+    \item \textbf{Canine:} Low-light vision (ignore penalties for dim and dark lighting), +2 to Notice checks using smell, and choose a Skill other than Notice. Whenever you make a roll using that Skill, add a +1 bonus
+    \item \textbf{Feline:} Low-light vision (ignore penalties for dim and dark lighting), and start with a d6 in Agility instead of a d4
+    \item \textbf{Fish:} You cannot drown in oxygenated liquid, and have a +2 bonus when performing swimming-related checks. You also require half the amount of sleep compared to humans.
+    \item \textbf{Reptile:} You regenerate faster, making a Natural Healing roll once per day instead of once per week. You also require half the amount of sleep compared to humans.
+    \item \textbf{Rodent:} +4 Pace, and doubles the normal jumping distance (adds +1d6 from a successful Strength roll)
+    \item \textbf{Serpent:} You can apply poison to a target using a touch-based attack (such as fangs or sting). On a success, the victim must roll Vigor or suffer a level of Fatigue. This is recovered after one hour. Multiple attacks can cause Incapacitation, but not death. You also require half the amount of sleep compared to humans.
+\end{itemize} 
+

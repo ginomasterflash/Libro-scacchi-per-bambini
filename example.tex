@@ -1,0 +1,105 @@
+\documentclass[10pt,twoside,onecolumn]{article}
+\usepackage{dnd}
+\usepackage{chessboard,subcaption,caption}
+\usepackage{lipsum}
+\usepackage[T1]{fontenc} % T1 = italiano ci aiuta per scrivere le parole italiane
+\usepackage[italian]{babel} % formatta le parole italiano nel documento
+
+\usepackage[utf8]{inputenc}
+% Clickable table of content links
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookman}                  % Closest built-in font I could find
+% Start document
+\begin{document}
+	\tableofcontents
+	\newpage
+	
+	% =================
+	% Your content goes here
+	% =================
+	\section{La Scacchiera}
+	Gli scacchi sono un gioco di strategia che si sviluppa su una tavola quadrata, detta "scacchiera", divisa in 64 caselle (chiamate anche case), alternativamente di colore chiaro e scuro. La scacchiera deve essere orientata in modo che la casa nell'angolo in basso a destra di ciascun giocatore sia bianca (chiara).
+	
+	\begin{figure}[h]
+		\centering
+		\chessboard[showmover=false, 
+		pgfstyle=border,
+		linewidth=0.01ex,
+		backregions={a8-a8, h1-h1},
+		labeltoplift=2mm, % padding about coordinates and chessboard side of nord
+		label=true,
+		hlabel=false,
+		vlabel=false
+		]
+		\caption{}
+		% \label{fig:nome_label}
+	\end{figure}
+\input{BookParts/Chapters/Chapter-1}
+
+\subsection{Elements}
+\subsubsection{Boxes}
+
+\begin{commentbox}{Neat Green Box!}
+    \lipsum[2]
+\end{commentbox}
+
+\begin{quotebox}
+    As you approach this template you get a sense that the blood and tears of many generations went into its making. A warm feeling welcomes you as you type your first words.
+\end{quotebox}
+
+\begin{paperbox}{Do the Players need direction?}
+    \lipsum[2]
+\end{paperbox}
+
+
+\subsubsection{Monster}
+
+\begin{monsterbox}{Monster Foo}
+    \textit{Small metasyntatic variable (golbinoid), neutral evil}\\
+    \hline
+    \basics[%
+    armorclass = 12,
+    hitpoints  = 16 (3d8 + 3),
+    speed      = 50 ft
+    ]
+    \hline
+    \stats[
+    STR = 12 (+1),
+    DEX = 14 (+2)
+    ]
+    \hline
+    \details[%
+    % If you want to use commas in these sections, enclose the
+    % description in braces.
+    % I'm so sorry.
+    languages = {Common Lisp, Erlang},
+    ]
+    \hline \\[1mm]
+    \begin{monsteraction}[Monster-super-powers]
+        This Monster has some serious superpowers!
+    \end{monsteraction}
+    \monstersection{Actions}
+    \begin{monsteraction}[Generate text]
+        This one can generate tremendous amounts of text! Though only when it wants to.
+    \end{monsteraction}
+
+    \begin{monsteraction}[More actions]
+    See, here he goes again! Yet more text.
+    \end{monsteraction}
+\end{monsterbox}
+
+\subsubsection{Spell}
+
+\begin{spellbox}{Spell Generic}
+    \spelldetails[]
+    \begin{spellaction}[Materials]
+    This spell doesn't really require much.
+    \end{spellaction}
+
+    \begin{spellaction}[Effect]
+    Touch things and get dissaproving looks.
+    \end{spellaction}
+\end{spellbox}
+
+% End document
+\end{document}

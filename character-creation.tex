@@ -1,0 +1,699 @@
+\documentclass[10pt,twoside]{article}
+\usepackage{dnd}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{bookman}                  % Closest built-in font I could find
+% Page Settings
+\raggedcolumns
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+% Clickable table of content links
+\usepackage[hidelinks]{hyperref}
+
+% Start document
+\begin{document}
+\section*{Traveller-style D\&D Character Creation}
+\addtocounter{section}{1}
+
+Old-school gamers may remember the character creation rules for \textit{Traveller}, a science-fiction tabletop RPG. It was a mini-game where you you explored the history and background of your character (and in some versions your character could even die before the real game starts!). Despite some wonky mechanics, this mini-game fostered a deep player-character connection that is till unrivalled in the tabletop RPG world.
+
+These rules are an adaption of \textit{Traveller} character generation for use in \textit{D\&D 5th edition}. While we have tried to balance these rules to make them compatible, this method will drastically alter your game's balance. You must seek the express permission from your Game Master before you use these rules in your game.
+
+We try to stick to original and open content where possible; if you believe we have infringed on someone's copyright please contact us through the details at the end of this document!
+
+\begin{multicols}{2}
+
+\tableofcontents
+
+\newpage
+
+% =================
+% Basic Concepts
+% =================
+
+\section{Basic Concepts}
+
+These rules completely rewrites the underlying character creation concepts in D\&D 5E, so some terminology will be different to what you are used to. Here is a quick summary of those changes:
+
+\begin{itemize}
+
+\item \textbf{Races} now only refer to the inherent genetic and physiological traits of your character. The standard Races you can find in the official Player's Handbook have been stripped of any learned cultural traits or skills.
+
+\item \textbf{Upbringing} refers to the environment and culture that your character experienced during their childhood. Some Upbringings will contain the cultural traits and skills that have been stripped from the official Races in the Player's Handbook, while others are inspired from the official Backgrounds.
+
+\item \textbf{Careers} is the direction that your character took once they reached adulthood for their race. This is where we will discover who your character is and what they achieved before they became an adventurer.
+
+\item \textbf{Term} is the standard length of time for a career period. This varies between the different races, as stated under the Aging entry listed for your race. Longer-lived races have longer term lengths because they do not live at the frantic pace of humans, and will take their time exploring and perfecting their skills.
+
+\item \textbf{Connections} are your character's links to this world. These links can be a \textit{Place}, \textit{Rival} or a \textit{Contact}. While character generation will prompt you to make (or advance) Connections, you can create your own Connections at any time with your Game Master's approval.
+
+\item \textbf{Events} are significant moments in your character’s history. During your career you may be required to roll on a variety of different event tables, including:
+
+\begin{itemize}
+
+\item \textit{Life} These are general life events that involve your character such as marriages, births, funerals and friendships.
+
+\item \textit{Career} These events significantly alter your working life, and could either harm or progress your career.
+
+\item \textit{Aging} When your character reaches old age for their race, they are required to make a roll to see if they avoid any negative effects. When your character reaches the Advanced Aging limit your character has a significant risk of dying!
+
+\item \textit{Mishaps} Life is never easy, and Mishaps represent the low points of your character's life.
+\end{itemize}
+
+\end{itemize}
+
+Please keep in mind that everything is totally and utterly at the discretion of your Game Master. These rules have the potential to make game-breaking or otherwise unsuitable characters. The intention of these rules is to create a fun little mini-game out of character creation.
+
+\textbf{And remember to Have fun!}
+
+% =================
+% Getting Started
+% =================
+
+\section{Getting Started}
+
+These rules completely modifies the Character Generation process given in the Player's Handbook, including the Race and Background entries. These rules will generate a character that is fully prepared to take their first level in a class.
+
+\begin{enumerate}
+\item Roll your six character ability scores or take the standard array, as per the rules on page 12 of the Player’s Handbook.
+\item Choose a \textbf{Race} and add the traits to your character sheet. Your character’s age will be set to the Starting Age for your race.
+\item Determine final Ability Scores and associated Modifiers.
+\item Choose an \textbf{Upbringing} and add the traits to your character sheet.
+\item Choose a \textbf{Career}. You cannot choose a career that you have already left.
+\begin{itemize}
+\item Roll to a skill check to qualify for that career
+\item If you qualify, go to step 6
+\item If you do not qualify, then you can enter the \textit{Serf} or the \textit{Vagabond} careers. If your Game Master allows it and it makes sense for your setting, you can be \textit{Drafted}.
+\end{itemize}
+\item Take the first \textbf{Rank} level for this career.
+\begin{itemize}
+\item If this is your first time in a career, add the Basic Training to your character sheet.
+\item You do not gain the Basic Training benefit for subsequent careers. Basic Training for a career is a special trait that influences your character throughout their life, and follows them even in subsequent careers. However, the Game Master may allow you to replace your original Basic Training if it suits your character better.
+\end{itemize}
+\item Choose a \textbf{Specialisation} for this career and note it down on your character sheet. You may change specialisations during your career, keeping your Rank level as you do so.
+\item Roll on the \textbf{Skills and Training} tables for your specialisation and add the traits to your character sheet.
+\begin{itemize}
+\item Some Game Masters may allow you to choose from the table instead of rolling for it.
+\item Depending on your DM, one of three things can happen if you roll a skill or tool that you are already proficient in:
+\begin{itemize}
+\item Nothing; you lucked out
+\item You get to reroll on the table
+\item You can use the optional Advanced skills, Advanced languages or Advanced tools rules listed at the end of this document.
+\end{itemize}
+\end{itemize}
+\item Roll a skill check for \textbf{Survival} in this career.
+\begin{itemize}
+\item If you succeed, go to Step 10
+\item If you did not succeed, then events have forced you from this career. Roll on the Mishaps table, then go straight to Step 12.
+\end{itemize}
+\item Roll for \textbf{Events} on the career table. Alternatively, establish a Connection with another player character
+\item Roll a skill check for \textbf{Advancement} in this career.
+\begin{itemize}
+\item If you succeed, increase your Rank and take any bonuses.
+\item If you roll less than 8 + the number of terms you have spent in this career, you have been made redundant and must leave this career.
+\end{itemize}
+\item Increase your age according to the Term length stated in your race entry. If your character is over the age limits, roll skill check for \textbf{Aging}.
+\item Choose whether to continue or change your career.
+\begin{itemize}
+\item If you continue with your career, go to Step 7
+\item If you wish to finish this career, or if you were forced out, go to Step 14
+\end{itemize}
+\item Roll for textbf{Benefits}. You gain 1 dice for each term your spend in this career. You can also gain or lose Benefit rolls during events.
+\begin{itemize}
+\item If you want to choose another career go to Step 5
+\item If you want to finish your character, go to Step 15
+\end{itemize}
+\item Finalise your character.
+\begin{itemize}
+\item Detail any Connection
+\item Define the effects of Events and Mishaps
+\item Purchase your starting equipment
+\end{itemize}
+\item Your character may now take their first level in a Class. Follow the rules for your Class as stated in the Players Handbook.
+\end{enumerate}
+
+\begin{commentbox}{Skill Checks and Character Creation}
+Your character starts their journey without any levels, and definitely without any proficiency. All Skill Checks that are requested during character creation (such as career, event, aging and mishap rolls) do not gain the proficiency bonus or any class traits that affect Skill Checks.
+Any Race, Upbringing or Career traits that affect Skill Checks can be used during character creation.
+\end{commentbox}
+
+\end{multicols}
+
+\newpage
+
+% =================
+% Races
+% =================
+
+\section{Races}
+
+\subsection{Dwarf}
+
+Dwarves are short, stout and extremely tough natural humanoids. Dwarves share many qualities with the rocky earth, probably lending to the mythology that dwarves were carved from the world's stone. Many Dwarves consider this myth a source of pride and will go out of their way to display the stubborness, tenaciousness and dependability of stone.
+
+Like humans, dwarves comes in a wide variety of skin, eye and hair colours. The most common traits are tanned skin, hazel eyes and dark hair. Males are often bald and grow thick facial hair (which is often braided and adorned to show social status). Females may also grow beards, but tend to shave them to distinguish them from the opposite sex.
+
+Dwarves are a long-lived race, reaching adulthood around 50. They age much like humans but over a longer period, with many living to see their bicentennial. Few dwarves ever live to be over 400.
+
+If you are a dwarf, add the traits below to your character sheet.
+
+
+\begin{multicols}{2}
+\subsubsection*{Size}
+A dwarf is about 4-5 feet tall (1.2-1.5 metres) and weighs an average of 150 pounds (70 kg).
+
+Your size is \textbf{Medium}.
+
+\subsubsection*{Age}
+You will use this table to determine how old your character will be when they start their adventuring career. The final age is just an approximation; your Game Master may allow you to adjust your age.
+\begin{dndtable}
+  Term Length & 20 \\
+  Starting Age & 50 \\
+  Aging Starts & 130 \\
+  Advanced Aging & 310 \\
+\end{dndtable}
+
+\subsubsection*{Speed}
+Your base walking speed is \textbf{25 ft} (7.5 metres). Your speed is not reduced by wearing heavy armour.
+
+\subsubsection*{Ability Score Increase}
+Constitution score increases by 2.
+
+Wisdom score increases by 1.
+
+\subsubsection*{Darkvision}
+You have Darkvision. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t dicern color in darkness, only shades of gray.
+
+\subsubsection*{Dwarven Resilience}
+You have advantage to saving throws against poison, and you have resistance against poison damage.
+
+\subsubsection*{Dwarven Toughness}
+Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.
+
+\begin{commentbox}{Dwarves in Fantasy}
+The Dwarves described in these rules are a loose intepretation of the dwarves that appear in Tolkien's \textit{Lord of the Rings} books. Your Game Master may use an alternate depiction.
+
+\begin{itemize}
+
+\item \textbf{Pratchett's \textit{Discworld} } have males and females indistinguishable from one another, are literal-minded and have no sense of metaphors or allusion, and can interbreed with humans
+
+\item \textbf{Warhammer} dwarves grow stronger as they get older (like Orcs), but have a breaking point where their general health rapidly declines. Female dwarves are rarely seen (leading to various rumours) and do not grow beards.
+
+\item In \textbf{Norse Mythology} dwarves are equated with dark elves, whereas Tolkien made dwarves and elves as distinct races. They are usually described as old men with beards, with only later sagas describing them as "small and ugly". They were usually associated with metalsmithing, healing, death and gatekeeping.
+
+\end{itemize}
+
+\end{commentbox}
+
+\end{multicols}
+
+\newpage
+
+
+\subsection{Elf}
+
+Elves are lithe, graceful and extraordinarily beautiful humanoids. All elves have an inherent magical nature, and many mythical creation stories have ancestral elves immigrating from the lands of the Faerie and Fey. These creation stories have led many an elf to claim affinity with other Fey and Faerie creatures, and many seek to find their roots by exploring ancient arcane secrets.
+
+Like humans, elves comes in a wide variety of skin, eye and hair colours. The most common traits are fair skin, blue or green eyes and brown or black hair. All elves tend to be of slender build (exceptionally strong elves look more athletic than muscular) and have no body hair except for eyebrows, eyelashes and hair (typically worn long). The key defining trait of elves are their prominent pointed and thin ears.
+
+Elves are one of the longest-lived races, reaching adulthood around 100. An elf's appearence does not change dramatically as their lifespan comes to a close, with an exception being a change in hair colour (alternatively graying or darkening). Few elves ever live to be over 700, with a few rare individuals living to reach 900.
+
+If you are an elf, add the traits below to your character sheet.
+
+\begin{multicols}{2}
+\subsubsection*{Size}
+You are 5-6 feet tall (1.5-1.8 metres) and have a slender build.
+
+Your size is \textbf{Medium}.
+
+\subsubsection*{Age}
+\begin{dndtable}
+  Term Length & 45 \\
+  Starting Age & 100 \\
+  Aging Starts & 280 \\
+  Advanced Aging & 685 \\
+\end{dndtable}
+
+\subsubsection*{Speed}
+Your base walking speed is \textbf{30 ft} (9 metres).
+
+\subsubsection*{Ability Score Increase}
+Dexterity score increases by 2.
+
+Intelligence score increases by 1.
+
+\subsubsection*{Darkvision}
+You have Darkvision. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t dicern color in darkness, only shades of gray.
+
+\subsubsection*{Fey Ancestry}
+You have advantage to saving throws against being charmed, and magic cannot put you to sleep.
+
+\subsubsection*{Cantrip}
+You know one cantrip of your choice from the wizard spell list.
+
+Intelligence is your spellcasting ability for it.
+
+\subsubsection*{Trance}
+You don’t need to sleep. Instead, you meditate deeply, remaining semiconscious, for 4 hours a day.
+
+While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.
+
+\begin{commentbox}{Elves\, Faerie and Myth}
+The exact origin and nature of the Elves largely depends on your setting (and your Game Master). Tolkien's \textit{Lord of the Rings} has greatly influenced the modern depiction of elves but there are some deviations such as Prachett's \textit{Discworld} where elves have copper-based blood, are vulnerable to iron and possess a illusion-creating glamour that makes everything they do seem more beautiful.
+
+Old Norse mythology depict "good/light" and "evil/dark" elves, in a pagan version of angels and demons. Germanic mythology depicted elves as otherworldly beings that tempted mortals to join them in the Elf-home. Later mythologies used "Elf" interchangeably with "Faerie", and could refer to wide range of benevolent and malevolent enchanted creatures such as goblins, gnomes, nymphs and sprites.
+
+Despite the vastly different depictions in folklore and modern fantasy many elves share a general theme; they were generally human-sized, are magical and possessed an enticing sexual allure.
+
+\end{commentbox}
+
+\end{multicols}
+
+\newpage
+
+
+\subsection{Halfling}
+
+Halflings are small, practical and extraordinarily plucky humanoids. In many ways halflings are simply smaller versions of humans and usually have the same proportions as the typical human adult. They are not inherently magical and yet possess what can only be described as an ongoing lucky streak. Many consider this supernatural luck as the sole reason the species have survived the dangers of a world filled with magic and monsters.
+
+Halflings commonly have dark-coloured eyes and hair regardless of their skin complexion. It is rare for a halfling to grow a beard, and even rarer to grow a mustache, but sideburns are common. Halflings are generally quick and dexterous, and will usually try to quickly put themselves into situations where there short stature becomes an advantage.
+
+Halflings are longed-lived, even though they reach adulthood at 20. Some halflings live long enough to see their second century.
+
+If you are a halfling, add the traits below to your character sheet.
+
+\begin{multicols}{2}
+
+\subsubsection*{Size}
+You are 3 feet tall (0.9 metres) and weigh 40 pounds (18 kg).
+
+Your size is \textbf{Small}.
+
+\subsubsection*{Age}
+\begin{dndtable}
+  Term Length & 15 \\
+  Starting Age & 20 \\
+  Aging Starts & 80 \\
+  Advanced Aging & 230 \\
+\end{dndtable}
+
+\subsubsection*{Speed}
+Your base walking speed is \textbf{25 ft} (7.5 metres).
+
+\subsubsection*{Ability Score Increase}
+Dexterity score increases by 2.
+Charisma score increases by 1.
+
+\subsubsection*{Lucky}
+When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.
+
+\subsubsection*{Halfling Nimbleness}
+You can move through the space of any creature that is of a size larger than yours.
+
+\subsubsection*{Naturally Stealthy}
+You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.
+
+\begin{commentbox}{In a hole in the ground...}
+Halflings are indisputably inspired by Tolkien's \textit{The Hobbit}, and yet have evolved over editions to become something unique to the game of D\&D. Instead of just being the pudgy homebodies content with the comforts of home as depicted in the books, they are now also troublesome opportunists and affable wanderers.
+
+Since your size is Small, you will need to be aware of the following:
+
+\begin{itemize}
+\item You have disadvantage on attack rolls using heavy weapons
+
+\item Even though \textit{Halfling Nimbleness} allows you to move through the space of a creature that is Medium or larger, it still counts as difficult terrain
+
+\item You can block creatures that are Tiny
+
+\item You can use Medium sized (or larger) creatures as mounts
+\end{itemize}
+
+\end{commentbox}
+
+\end{multicols}
+
+\newpage
+
+
+\subsection{Human}
+
+Humans are the standard humanoid of the world. They can be found almost everywhere and are fierce, diverse, ambitious and adaptable. Despite their relative short lifespans compared to other races, they generally become one of the dominant races whereever they are allowed to prosper.
+
+Their ambitious and fierce nature means that humans are eternally divided over various subjects ranging from culture, language, nation, region, religion and even skin complexion and other physical traits.
+
+If you are a human, add the traits below to your character sheet.
+
+\begin{multicols}{2}
+
+\subsubsection*{Size}
+You are 5-6 feet tall (1.2-1.5 metres).
+
+Your size is \textbf{Medium}.
+
+\subsubsection*{Age}
+\begin{dndtable}
+  Term Length & 4 \\
+  Starting Age & 18 \\
+  Aging Starts & 34 \\
+  Advanced Aging & 82 \\
+\end{dndtable}
+
+\subsubsection*{Speed}
+Your base walking speed is \textbf{30 ft} (9 metres).
+
+\subsubsection*{Ability Score Increase}
+Each of your ability scores increases by 1.
+
+\end{multicols}
+
+\newpage
+
+
+\subsection{Dragonborn}
+
+Dragonborn resemble humanoid dragons. They exhibit many draconic features such as a scaly hide, muscular body, elemental resistance and a breath weapon. Dragonborn are often mistaken for reptiles, but are in fact warm-blooded draconic creatures with internal body temperatures that are warmer than most races.
+
+It is unknown whether the Dragonborn ancestors were created, bred or born. The only known fact is that true Dragons were somehow involved, but the specifics have largely been lost to the ravages of time. Regardless, Dragonborn scales are either scarlet, gold, rust, ocher, bronze or brown and bear little relation to the scales of their true dragon kin. Their eyes are usually red or gold in hue, and instead of hair they bear a crest of hornlike scales on the back of the head. Other distinguishing features are a blunt snout, strong brow, reptilian frills on the cheeks and ears, and three fingers with a thumb that are all tipped with claws.
+
+Dragonborn alive roughly as long as humans, but reach adulthood earlier at around 15. Dragonborn are unique in that they hatch from eggs, and their breath weapon is usuaully fully developed when they reach maturation.
+
+If you are a dragonborn, add the traits below to your character sheet.
+
+\begin{multicols}{2}
+
+\subsubsection*{Size}
+You are over 6 feet tall (1.5 metres) and average almost 250 pounds (110 kg).
+
+Your size is \textbf{Medium}.
+
+\subsubsection*{Age}
+\begin{dndtable}
+  Term Length & 4 \\
+  Starting Age & 15 \\
+  Aging Starts & 31 \\
+  Advanced Aging & 75 \\
+\end{dndtable}
+
+\subsubsection*{Speed}
+Your base walking speed is \textbf{30 ft} (9 metres).
+
+\subsubsection*{Ability Score Increase}
+Strength score increases by 2.
+Charisma score increases by 1.
+
+\subsubsection*{Draconic Ancestry}
+You have draconic ancestry. Choose one type from the Draconic Ancestry table in the Players Handbook. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table.
+
+\subsubsection*{Breath Weapon}
+You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape and damage type of the exhalation.
+
+\begin{spellbox}{Breath Weapon}
+    \spelldetails[%
+    level   = 0,
+    school  = Power,
+    time    = 1 action,
+    range   = \textit{See Draconic Ancestry},
+    duration = Instant,
+    components = {None},
+    ]
+
+    \begin{spellaction}[Effect]
+    When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus.
+
+    A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.
+
+    After you use your breath weapon, you can't use it again until you complete a short or long rest.
+    \end{spellaction}
+\end{spellbox}
+
+\subsubsection*{Damage Resistance}
+You have resistance to the damage type associated with your draconic ancestry.
+
+\end{multicols}
+
+\newpage
+
+
+\subsection{Gnome}
+
+Gnomes are small and eccentric humanoids. They are generally larger and heavier than halflings, and are comparable to elves in that they share a Fey or Faerie origin. Creation myths for the Gnomish race usually involved the first Gnomes being cut from gemstones, and many Gnomes regard this origin as a source of immense pride (much like the Dwarves taking pride from being carved from stone). This has led to many Gnomes trying to emulate their gemstone origins by being as "vibrant", "uncut" and "luminescent" as possible.
+
+The skin complexion of gnomes range from reddish tabs to earthy browns (or even shades of grey), while their hair varied wildly from blond, brown and to exotic colours such white, orange, and even green. Their eyes are often glittering black or blue. They share the pointed ears of the elves, but the similarities to the two races end there.
+
+Gnomes are a long-lived race, reaching adulthood at around 40. Unlike the elves, gnomes show a greater degree of aging as they grew older and once they pass their first century their hair begins to gray. They often live to see their third century, and some gnomes are known to reach 500.
+
+If you are a gnome, add the traits below to your character sheet.
+
+\begin{multicols}{2}
+
+\subsubsection*{Size}
+You are 3-4 feet tall (0.9-1.2 metres) and average 40 pounds (18 kg).
+
+Your size is \textbf{Small}.
+
+\subsubsection*{Age}
+\begin{dndtable}
+  Term Length & 26 \\
+  Starting Age & 40 \\
+  Aging Starts & 144 \\
+  Advanced Aging & 390 \\
+\end{dndtable}
+
+\subsubsection*{Speed}
+Your base walking speed is \textbf{25 ft} (7.5 metres).
+
+\subsubsection*{Ability Score Increase}
+Intelligence score increases by 2.
+Constitution score increases by 1.
+
+\subsubsection*{Darkvision}
+You have Darkvision.
+\textit{You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t dicern color in darkness, only shades of gray.}
+
+\subsubsection*{Gnome Cunning}
+You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.
+
+\begin{commentbox}{From the underground to gardens}
+Gnomes came much later to folk tales, and were imagined in the Renaisance era to be ground-dwelling diminutive spirits in contrast to elves and faeries. The modern Garden Gnome is a merging of the Scandanavian \textit{Tomte}, an industrious guardian spirit.
+
+Dwarves have largely supplanted the gnomes as the defacto ground-dwelling guardians of treasure in modern fantasy, driven by Tolkien's \textit{Lord of the Rings}. However, Tolkien's elven \textit{Noldor} were originally called Gnomes and were considered the most intelligent and technologically minded of all the elves. This has probably led to the common depiction of gnomes in modern fantasy as inventors, mechanics and engineers.
+
+\end{commentbox}
+
+
+\end{multicols}
+
+\newpage
+
+
+\subsection{Half-Elf}
+
+Half-elves are a half-breed, caught between the worlds of elves and men. They reach adulthood quicker than elves, and live longer than humans. They are distinguished by their unique ears; as wide as a human's but with a definite tip like an elf's.
+
+Half-elves come in a wide variety of skin and hair colours, usually a blend of traits inherited by their parents. Male Half-elves can also grow facial hair, unlike male elves.
+
+\begin{multicols}{2}
+
+\subsubsection*{Size}
+You are the same size as humans.
+
+Your size is \textbf{Medium}.
+
+\subsubsection*{Age}
+\begin{dndtable}
+  Term Length & 10 \\
+  Starting Age & 20 \\
+  Aging Starts & 60 \\
+  Advanced Aging & 160 \\
+\end{dndtable}
+
+\subsubsection*{Speed}
+Your base walking speed is \textbf{30 ft} (9 metres).
+
+\subsubsection*{Ability Score Increase}
+Charisma score increases by 2.
+Two other ability scores of your choice increases by 1.
+
+\subsubsection*{Darkvision}
+You have Darkvision. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t dicern color in darkness, only shades of gray.
+
+\subsubsection*{Fey Ancestry}
+You have advantage against being charmed, and magic can't put you to sleep.
+
+\end{multicols}
+
+\newpage
+
+
+\subsection{Half-Orc}
+
+Half-Orcs are a half-breed, caught between the worlds of orcs and men. They combine the physical power of their orcish ancestors with the agility of their human heritage, and can be formidable individuals.
+
+Most half-orcs have grayish skin, jutting jaws, a sloping forehead, coarse body hair and prominent teeth. Their canines are noticeably smaller than a full-blooded orc's tusks, but they still appear bestial to other humanoids. A Half-Orc's hair is usually black, though it grays very quickly with age.
+
+\begin{multicols}{2}
+
+\subsubsection*{Size}
+Half-Orcs tend to be taller and bulkier than humans.
+
+Your size is \textbf{Medium}.
+
+\subsubsection*{Age}
+\begin{dndtable}
+  Term Length & 4 \\
+  Starting Age & 14 \\
+  Aging Starts & 30 \\
+  Advanced Aging & 60 \\
+\end{dndtable}
+
+\subsubsection*{Speed}
+Your base walking speed is \textbf{30 ft} (9 metres).
+
+\subsubsection*{Ability Score Increase}
+Strength score increases by 2.
+Constitution score increases by 1.
+
+\subsubsection*{Darkvision}
+You have Darkvision. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t dicern color in darkness, only shades of gray.
+
+\subsubsection*{Relentless Endurance}
+When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest.
+
+\subsubsection*{Savage Attacks}
+When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit.
+
+\end{multicols}
+
+\newpage
+
+
+\subsection{Tiefling}
+
+You are the end result of generations of fiend blood mixing with humanoids.
+
+\begin{multicols}{2}
+
+\subsubsection*{Size}
+Tieflings tend to be similar in size to humans.
+
+Your size is \textbf{Medium}.
+
+\subsubsection*{Age}
+\begin{dndtable}
+  Term Length & 4 \\
+  Starting Age & 18 \\
+  Aging Starts & 34 \\
+  Advanced Aging & 82 \\
+\end{dndtable}
+
+\subsubsection*{Speed}
+Your base walking speed is \textbf{30 ft} (9 metres).
+
+\subsubsection*{Ability Score Increase}
+Charisma score increases by 2.
+Intelligence score increases by 1.
+
+\subsubsection*{Darkvision}
+You have Darkvision. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t dicern color in darkness, only shades of gray.
+
+\subsubsection*{Hellish Resistance}
+You have resistance to fire damage.
+
+\subsubsection*{Infernal Legacy}
+You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a 2nd level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darknessspell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells..
+
+
+\end{multicols}
+
+\newpage
+
+
+% =================
+% Upbringings
+% =================
+
+\section{Upbringing}
+
+\subsection{Dwarven Culture}
+
+You grew up within a Dwarven nation, or as part of a Dwarven enclave in a foriegn land. Whether you are a Dwarf or not, you grew up being educated in Dwarvish ways and their language. By the time you reached adulthood you were an accepted part of your Dwarvish community.
+
+Dwarven culture generally revolves around the earth as the typical creation myth for Dwarves involves the first dwarf being hewn from stone. This is a source of pride among dwarves, so there is a cultural focus on activities such as mining, smelting and earthworks.
+
+
+\begin{multicols}{2}
+\subsubsection*{Dwarven Combat Training}
+You have proficiency with the battleaxe, handaxe, light hammer, and warhammer
+
+\subsubsection*{Tool Proficiency}
+You gain proficiency with the artisan’s tools of your choice: smith’s tools, brewer’s supplies, or mason’s tools.
+
+\subsubsection*{Stonecunning}
+Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.
+
+\subsubsection*{Languages}
+You can speak, read, and write Common and Dwarvish.
+
+\end{multicols}
+
+\newpage
+
+% =================
+% Legal and References
+% =================
+
+\section{Legal, References \& Contact}
+
+Copyright (c) 2016 Nassar Zeitoune
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this document and associated files (the "Document"), to deal in the Document without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Document, and to permit persons to whom the Document is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Document.
+
+THE DOCUMENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE DOCUMENT OR THE USE OR OTHER DEALINGS IN THE DOCUMENT.
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\item Wizards of the Coast's \textit{D\&D 5th Edition System Reference Document} [\url{http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf}]
+
+\item Wizards of the Coast's \textit{Player's Basic Rules} [\url{http://dnd.wizards.com/products/tabletop/players-basic-rules}]
+
+\item Wizards of the Coast's \textit{Dungeon Master's Basic Rules} [\url{http://dnd.wizards.com/products/tabletop/dm-basic-rules}]
+
+\item Wizards of the Coast's \textit{Unearthed Arcana} [\url{http://dnd.wizards.com/articles-tags/unearthed-arcana}]
+
+\item Roll20's \textit{5th Edition SRD Compendium} [\url{https://roll20.net/compendium/dnd5e/BookIndex}]
+
+\item 5th Edition SRD (Unofficial) [\url{http://www.5thsrd.org/}]
+
+\item 5eSRD (Unofficial) [\url{http://www.5esrd.com/}]
+
+\item The Hypertext d20 SRD [\url{http://www.d20srd.org/}]
+
+\item Forgotten Realms Wiki [\url{http://forgottenrealms.wikia.com/}]
+
+\item D\&D Wiki [\url{http://www.dandwiki.com/}]
+
+\item Reddit - DND [\url{https://www.reddit.com/r/DnD/}]
+
+\item Reddit - DNDBehindTheScreen [\url{https://www.reddit.com/r/dndbehindthescreen}]
+
+\item Reddit - UnearthedArcana [\url{https://www.reddit.com/r/UnearthedArcana/}]
+
+\item Reddit - DnDHomebrew [\url{https://www.reddit.com/r/DnDHomebrew}]
+
+\item Reddit - Best of Homebrew: 5th Edition [\url{https://www.reddit.com/r/boh5e}]
+
+\item Munsondev Traveller Character Generation [\url{http://www.munsondev.com/chargen/}]
+
+\item MegaTraveller Basic Character Generation [\url{http://traveller.chromeblack.com/files/mtpcgen.html}]
+
+\end{enumerate}
+
+\end{multicols}
+
+% End document
+
+\end{document}

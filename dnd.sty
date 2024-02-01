@@ -1,0 +1,464 @@
+% DND 5e LaTeX Style File
+% Created by Evan Bergeron
+% Modified by Christopher Liu December 2015
+% Modified by Yannic Meyer Feb 2016
+% Modified by Nassar Zeitoune Sep 2016
+
+\ProvidesPackage{dnd}[2016/09/05]
+
+%
+% Prerequisite Packages
+%
+
+\RequirePackage{titlesec}         % Used to adjust (sub)section colors and fonts
+\RequirePackage[
+  margin=1.5cm,
+  includefoot,
+  footskip=30pt,
+]{geometry}                       % Use the full page (Smaller margins)
+\RequirePackage[table]{xcolor}
+\RequirePackage{array}
+\RequirePackage{tabularx}
+\RequirePackage{tikz}
+\RequirePackage{keycommand}
+\RequirePackage{fancyhdr}         % Adaptation of the footers
+\RequirePackage[most]{tcolorbox}  % used for some boxes
+\RequirePackage{graphicx}
+\RequirePackage{ifthen}
+\RequirePackage{xtab}
+\RequirePackage{amssymb}
+
+%
+% Style Parameters
+%
+
+% Define colors, sampled from the books.
+\usepackage{color}
+\definecolor{bgtan}{HTML}{F7F2E5}          % Used for background and quotebox
+\definecolor{titlered}{HTML}{58180D}       % Used for titles
+\definecolor{undergold}{HTML}{C9AD6A}      % Used for titlerules
+\definecolor{uppergold}{HTML}{B89A67}      % Used for pagenumbers and footer
+\definecolor{puregold}{HTML}{E69A28}       % Used for top line in newer monsterbox
+\definecolor{monstertan}{HTML}{FDF1DC}     % Used for newer monsterblock
+\definecolor{monstertandark}{HTML}{F0DBB5} % Used for older monsterbox
+\definecolor{commentgreen}{HTML}{E0E5C1}   % Used in table and green commentbox
+\definecolor{itemtablepink}{HTML}{E9CDC2}  % Used in item tables instead of the green
+\definecolor{rulered}{HTML}{9C2B1B}        % Used for triangular rule in statsblock
+
+% Setup for custom footer
+\pagestyle{fancy}
+\footskip = 50pt                     % push the footer down
+\fancyhfoffset[LE]{30pt}             % push the footer left on even pages
+\fancyhfoffset[RO]{30pt}             % push the footer right on odd pages
+\renewcommand{\headrulewidth}{0.0pt} % no rule for header
+\renewcommand{\footrulewidth}{0.0pt} % no rule for footer
+
+% clear all header and footer fields
+\fancyhead{}
+\fancyfoot{}
+
+\fancyfoot[LE]{
+    \textcolor{uppergold}{\thepage}
+    \hspace*{0.8cm}
+    \raisebox{0pt}{\textcolor{uppergold}\leftmark}
+}
+
+\fancyfoot[RO]{
+    \raisebox{0pt}{\textcolor{uppergold}\leftmark}
+    \hspace*{0.8cm}
+    \textcolor{uppergold}{\thepage}
+}
+
+% Fancy DnD 5e-style hline
+\renewcommand{\hline}{
+\noindent
+  \begin{tikzpicture}[]
+    \draw [rulered, fill=rulered] (0, 0) -- (\linewidth - 0.5em, 0);
+  \end{tikzpicture}
+}
+
+% Either hilariously, or infuriatingly, the \ifcommandkey
+% implementation is buggy. Here is a re-implementation
+% from tex.stackexchange.
+\begingroup
+  \makeatletter
+  \catcode`\/=8 %
+  \@firstofone
+    {
+      \endgroup
+      \renewcommand{\ifcommandkey}[1]{%
+        \csname @\expandafter \expandafter \expandafter
+        \expandafter \expandafter \expandafter  \expandafter
+        \kcmd@nbk \commandkey {#1}//{first}{second}//oftwo\endcsname
+      }
+   }
+
+
+% Raised Rule Command:
+%  Arg 1 (Optional) - How high to raise the rule
+%  Arg 2            - Thickness of the rule
+\newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+%
+% D&D Sections
+%
+
+% Remove Numbering from section
+% If you want Numbering on the sections comment the following three lines and
+% change the "0em" separation-definitions in the lower part to 1em)
+\renewcommand\thesection{}
+\renewcommand\thesubsection{}
+\renewcommand\thesubsubsection{}
+
+% Adjust section and subsection colors and font (change 0em to 1em if you commented the removal of section numbering)
+\titleformat{\section}{\color{titlered}\normalfont\scshape\huge}{\thesection}{0em}{}[{\titleline{\color{undergold}\titlerule[1pt]}}]
+\titleformat{\subsection}{\color{titlered}\normalfont\scshape\Large}{\thesubsection}{0em}{$\bigstar$ }[{\titleline{\color{undergold}\titlerule[1pt]}}]
+\titleformat{\subsubsection}{\color{titlered}\normalfont\scshape\large}{\thesubsubsection}{0em}{$\blacktriangleright$ }[\addtocounter{section}{1}]
+%
+% Table Environment
+%
+\newenvironment{dndtable}{
+    \par\vspace*{8pt}
+    \noindent
+    \fontfamily{lmss}\selectfont %Select font
+    \rowcolors{1}{monstertan}{commentgreen} % Alternate colors
+    \tabularx{\linewidth}{XX}
+}
+{\vspace{8pt plus 1pt}\noindent\endtabularx}
+
+% Table settings
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}\hsize=#1\hsize}X}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}\hsize=#1\hsize}X}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}\hsize=#1\hsize}X}
+\newcolumntype{b}{>{\raggedright\arraybackslash}X}
+\newcolumntype{s}{>{\raggedright\arraybackslash\hsize=.5\hsize}X}
+\newenvironment{rpgtable}[3]{\rowcolors{0}{#1}{#2}\begin{xtabular}{#3}} {\end{xtabular}}
+\newenvironment{powertable}{\rowcolors{0}{puregold}{bgtan}\begin{xtabular}} {\end{xtabular}}
+\newenvironment{redpowertable}{\rowcolors{0}{itemtablepink}{bgtan}\begin{xtabular}} {\end{xtabular}}
+\newenvironment{standardtable}{
+    \par\vspace*{8pt}
+    \noindent
+    \rowcolors{1}{bgtan}{puregold} % Alternate colors
+    \tabularx
+}
+{\vspace{8pt plus 1pt}\noindent\endtabularx}
+% Table Environment
+\newenvironment{redtable}{
+    \par\vspace*{8pt}
+    \noindent
+    \rowcolors{1}{bgtan}{itemtablepink} % Alternate colors
+    \tabularx
+}
+{\vspace{8pt plus 1pt}\noindent\endtabularx}
+\newenvironment{rpgtabularx}[4]{
+    \par\vspace*{8pt}
+    \noindent
+    \rowcolors{1}{#1}{#2} % Alternate colors
+    \tabularx{#3}{#4}
+}
+{\vspace{8pt plus 1pt}\noindent\endtabularx}
+
+%
+% Green comment box definition
+%
+
+\newtcolorbox{commentbox}[2][]{
+    frame hidden,
+    boxrule=0pt,
+    breakable,
+    enhanced,
+    before skip=8pt plus 1pt,
+    toptitle=3mm,
+    boxsep=0.25ex,
+    left=8pt,
+    right=8pt,
+    arc=0mm,
+    fonttitle=\scshape\color{black},
+    title=#2,
+    parbox = false,
+    colback=commentgreen,
+    colframe=commentgreen,
+    colbacktitle=commentgreen,
+    after={\vspace{5pt plus 1pt}\noindent},
+    #1
+}
+
+%
+% D&D 4E style items
+%
+
+% Item Box
+\newtcolorbox{itembox}[2][]{
+    enhanced,
+    arc=15pt,
+    colbacktitle=puregold,
+    colback=monstertan,
+    fonttitle=\bfseries\color{white}\Large,
+    title=#2,
+    sharp corners,
+    frame hidden,
+    before skip=8pt plus2pt,
+    breakable,
+    after={\vspace{7pt plus 1pt}\noindent},
+    #1
+}
+
+\newenvironment{itemaction}[1][\unskip]{\emph{\textbf{#1.}}}{\vspace{0.5em}}
+
+% Item Table
+\newenvironment{itemtable}{
+    \par\vspace*{2pt}
+    \noindent
+    \rowcolors{1}{monstertan}{monstertandark} % Alternate colors
+    \tabularx{\linewidth}{XX}
+}
+{\vspace{2pt plus 1pt}\noindent\endtabularx}
+
+% Table Environment
+\newenvironment{dnditemtable}{
+    \par\vspace*{8pt}
+    \noindent
+    \rowcolors{1}{bgtan}{itemtablepink} % Alternate colors
+    \tabularx{\linewidth}{XX}
+}
+{\vspace{8pt plus 1pt}\noindent\endtabularx}
+
+% Item Macros
+\newkeycommand\itemdetails[rarity=Common,
+                    bonus=1,
+                    enhance=Attack \& Damage,
+                    price=1000 GP,
+                    type=Plate Armour]{%
+    \begin{itemtable}
+    \textbf{Type}  & \commandkey{type}\\
+    \textbf{Bonus}  & +\commandkey{bonus}\\
+    \textbf{enhance}  & \commandkey{enhance}\\
+    \textbf{Rarity}  & \commandkey{rarity}\\
+    \textbf{Price}  & \commandkey{price}
+    \end{itemtable}
+}
+
+%
+% Monsters
+%
+
+% Monterbox
+\newtcolorbox{monsterbox}[2][]{
+    enhanced,
+    frame hidden,
+    before skip=7pt plus2pt,
+    boxrule=0pt,
+    breakable,
+    boxsep=0.25ex,
+    toptitle=3mm,
+    left=2.5mm,
+    right=2.15mm,
+    arc=0mm,
+    borderline north={4pt}{0pt}{titlered},
+    borderline north={2.5pt}{0.75pt}{puregold},
+    borderline south={4pt}{0pt}{titlered},
+    borderline south={2.5pt}{0.75pt}{puregold},
+    colback=monstertan,
+    colbacktitle=monstertan,
+    colframe=titlered,
+    fonttitle=\scshape\bfseries\color{titlered}\Large,
+    title=#2,
+    after={\vspace{7pt plus 1pt}\noindent},
+    #1
+}
+
+% Generic section environment
+\newenvironment{genericsection}[1]{
+  %\par\nobreak\vfil\penalty0\vfilneg
+  %\vtop\bgroup
+  \begin{minipage}{\linewidth}
+  \color{titlered}\textbf{#1}\vspace{3pt}
+  \titleline{\color{titlered}\titlerule[0.6pt]}
+  \par\medskip
+  \color{black}
+}
+{
+  \vspace{0.5em}
+  %\par\xdef\tpd{\the\prevdepth}\egroup
+  %\prevdepth=\tpd
+  \end{minipage}
+}
+
+% Define Monster subsection header style
+\newcommand{\monstersection}[1]{
+    {\par
+    \color{titlered}\normalfont\scshape\Large #1 \vspace{3pt}
+    \titleline{\color{titlered}\titlerule[0.6pt]}
+    \par\medskip}
+}
+
+% Monster Action
+\newenvironment{monsteraction}[1][\unskip]{\emph{\textbf{#1.}}}{\vspace{0.5em}}
+
+% Monster Macros
+\newkeycommand\basics[armorclass=0, hitpoints=0, speed=0]{%
+    \color{titlered}
+    \textbf{Armor Class} \commandkey{armorclass}\\
+    \textbf{Hit Points} \commandkey{hitpoints}\\
+    \textbf{Speed} \commandkey{speed}\\
+}
+
+% Taubular enviornment for stats-block
+\newkeycommand\stats[STR=10 (+0),
+                        DEX=10 (+0),
+                        CON=10 (+0),
+                        INT=10 (+0),
+                        WIS=10 (+0),
+                        CHA=10 (+0)]{
+    {\footnotesize
+    \hspace*{-3.5pt}
+    \resizebox{0.97\linewidth}{\height}{
+        \begin{tabularx}{\linewidth}{cccccc}
+            \rule{0pt}{3.7mm} %adds space between hline and table
+            \textbf{STR} & \textbf{DEX} & \textbf{CON} & \textbf{INT} & \textbf{WIS} & \textbf{CHA}\\
+            \commandkey{STR} & \commandkey{DEX} & \commandkey{CON} & \commandkey{INT} & \commandkey{WIS} & \commandkey{CHA}
+        \end{tabularx}
+    }
+    \\[0.4em] %adds space after table
+    }
+}
+
+\newkeycommand\details[skills=,
+                      damageimmunities=,
+                      savingthrows=,
+                      conditionimmunities=,
+                      damageresistances=,
+                      damagevulnerabilities=,
+                      senses=-,
+                      languages=-,
+                      challenge=0]{%
+  \ifcommandkey{savingthrows}
+    {\textbf{Saving Throws} \commandkey{savingthrows}\\}{}
+  \ifcommandkey{skills}
+    {\textbf{Skills} \commandkey{skills}\\}{}
+  \ifcommandkey{damagevulnerabilities}
+    {\textbf{Damage Vulnerabilities} \commandkey{damagevulnerabilities}\\}{}
+  \ifcommandkey{damageresistances}
+    {\textbf{Damage Resistances} \commandkey{damageresistances}\\}{}
+  \ifcommandkey{damageimmunities}
+    {\textbf{Damage Immunities} \commandkey{damageimmunities}\\}{}
+  \ifcommandkey{conditionimmunities}
+    {\textbf{Condition Immunities} \commandkey{conditionimmunities}\\}{}
+  % These traits appear to always be present.
+  {\textbf{Senses} \commandkey{senses}\\}
+  {\textbf{Languages} \commandkey{languages}\\}
+  {\textbf{Challenge} \commandkey{challenge}\\}
+\color{black}
+}
+
+%
+% Paperbox
+%
+
+\newtcolorbox{paperbox}[2][]{
+	frame hidden,
+	boxrule=0pt,
+	breakable,
+	enhanced,
+	before skip=11pt plus 1pt,
+	toptitle=3mm,
+	boxsep=0.25ex,
+	left=8pt,
+	right=8pt,
+	fonttitle=\scshape\bfseries\color{black},
+	title=#2,
+	arc=0mm,
+	parbox = false,
+	borderline north={1pt}{-0.5pt}{black},
+	borderline south={1pt}{-0.5pt}{black},
+	colback=monstertandark,
+	colframe=monstertandark,
+	colbacktitle=monstertandark,
+	fuzzy shadow={0mm}{-3.5pt}{-0.5pt}{0.4mm}{black!60!white},
+	overlay={
+		\fill [fill=black] (frame.south west) -- ++(7pt,0) -- ++(0,-5pt) -- cycle;
+		\fill [fill=black] (frame.north west) -- ++(7pt,0) -- ++(0,5pt) -- cycle;
+		\fill [fill=black] (frame.north east) -- ++(-7pt,0) -- ++(0,5pt) -- cycle;
+		\fill [fill=black] (frame.south east) -- ++(-7pt,0) -- ++(0,-5pt) -- cycle;
+		},
+	after={\vspace{10pt plus 1pt}\noindent},
+	#1
+}
+
+%
+% DnD Quote
+%
+
+\newtcolorbox{quotebox}[1][]{enhanced jigsaw,frame hidden,boxrule=0pt,
+    breakable,
+    enhanced,
+    before skip=10pt plus 1pt,
+    boxsep=0.25ex,
+    left=8pt,
+    right=8pt,
+    colback=bgtan,
+    colframe=bgtan,
+    arc=0mm,
+    parbox = false,
+    borderline west={1pt}{-0.5pt}{titlered},
+    borderline east={1pt}{-0.5pt}{titlered},
+    overlay={
+        \foreach \n in {north east,north west,south east,south west}
+        {\draw [titlered, fill=titlered] (frame.\n) circle (2pt); }; },
+    after={\vspace{7.5pt plus 1pt}\noindent},
+    #1
+}
+
+%
+% D&D 4E style spells
+%
+
+% spellbox
+\newtcolorbox{spellbox}[2][]{
+    enhanced,
+    arc=15pt,
+    colbacktitle=titlered,
+    colback=monstertan,
+    fonttitle=\bfseries\color{white}\Large,
+    title=#2,
+    sharp corners,
+    frame hidden,
+    before skip=8pt plus2pt,
+    breakable,
+    after={\vspace{7pt plus 1pt}\noindent},
+    #1
+}
+
+% Spell Action
+\newenvironment{spellaction}[1][\unskip]{\emph{\textbf{#1.}}}{\vspace{0.5em}}
+
+% Spell Table
+\newenvironment{spelltable}{
+	\par\vspace*{2pt}
+    \noindent
+    \rowcolors{1}{monstertan}{monstertandark} % Alternate colors
+    \tabularx{\linewidth}{XX}
+}
+{\vspace{2pt plus 1pt}\noindent\endtabularx}
+
+
+% Spell Macros
+\newkeycommand\spelldetails[level=Cantrip,
+                    school=Abjuration,
+                    restrict=All,
+                    time=1 action,
+                    range=Touch,
+                    duration=Instant,
+                    components={V, S, M},
+                    ritual=No]{%
+    \textit{\commandkey{level} level \commandkey{school}  \ifthenelse{\equal{\commandkey{ritual}}{yes}{(ritual)}}}\\
+    \begin{spelltable}
+    \textbf{Time}  & \commandkey{time}\\
+    \textbf{Range}  & \commandkey{range}\\
+    \textbf{Duration}  & \commandkey{duration}\\
+    \textbf{Components}  & \commandkey{components}\\
+    \textbf{Restricted}  & \commandkey{restrict}
+    \end{spelltable}
+}
+
+\endinput
